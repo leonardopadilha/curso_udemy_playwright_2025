@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal</title>
+    <script>
+      function openNewTab() {
+        // Abre uma nova aba
+        const newTab = window.open("", "_blank");
+
+        // Define o conteúdo da nova aba
+        newTab.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Nova Tab</title>
+                </head>
+                <body>
+                    <h1>Bem-vindo à Nova Tab!</h1>
+                </body>
+                </html>
+            `);
+
+        // Finaliza a escrita no documento da nova aba
+        newTab.document.close();
+      }
+
+      // Adiciona o evento de clique ao botão com o id "openTabButton"
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("openTabButton");
+        if (button) {
+          button.addEventListener("click", openNewTab);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Página Principal</h1>
+    <!-- Botão com id para abrir a nova aba -->
+    <button id="openTabButton">Abrir Nova Aba</button>
+  </body>
+</html>
